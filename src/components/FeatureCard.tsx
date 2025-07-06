@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, type MouseEvent } from "react";
+import { useState, useCallback, useRef, type MouseEvent, type JSX } from "react";
 import { motion, useMotionValue, frame } from "motion/react";
 import * as variants from "@/lib/motionVariants";
 
