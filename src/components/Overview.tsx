@@ -7,6 +7,7 @@ import { overviewData } from "@/constants"
 import * as variants from "@/lib/motionVariants"
 import { overviewBanner } from "@/assets"
 import { Play } from "lucide-react"
+import { memo } from 'react';
 
 const Overview = () => {
   return (
@@ -28,7 +29,7 @@ const Overview = () => {
 
             <motion.div variants={variants.fadeInScale} initial='start' whileInView='end' viewport={{ once: true }} className="relative max-w-4xl mx-auto shadow-xl">
                 <figure>
-                    <img src={overviewBanner} width={900} height={601} alt="" />
+                    <img src={overviewBanner} width={900} height={601} alt="" loading="lazy" decoding="async" />
                 </figure>
 
                 <Dialog>
@@ -66,4 +67,4 @@ const Overview = () => {
   )
 }
 
-export default Overview
+export default memo(Overview);

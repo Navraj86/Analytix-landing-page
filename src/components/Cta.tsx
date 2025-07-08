@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import * as variants from "@/lib/motionVariants"
 import { ctaData } from "@/constants"
 import { ctaBanner } from "@/assets"
+import { memo } from 'react';
 
 const Cta = () => {
   return (
@@ -20,7 +21,7 @@ const Cta = () => {
                 </div>
 
                 <motion.figure variants={variants.fadeInLeft} initial='start' whileInView='end' viewport={{ once: true }} className="-order-1 pt-14 psp-8 sm:ps-12 md:ps-14 lg:order-none lg:p-0">
-                    <img src={ctaBanner} alt="" className="w-full h-full object-contain object-right" />
+                    <img src={ctaBanner} alt="" className="w-full h-full object-contain object-right" loading="lazy" decoding="async" />
                 </motion.figure>
             </motion.div>
         </div>
@@ -28,4 +29,4 @@ const Cta = () => {
   )
 }
 
-export default Cta
+export default memo(Cta);

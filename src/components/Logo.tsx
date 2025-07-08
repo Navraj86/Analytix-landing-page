@@ -1,4 +1,5 @@
 import { favicon, logo } from "@/assets"
+import { memo } from 'react';
 
 type LogoProps = {
     variant?: 'default' | 'icon';
@@ -18,4 +19,4 @@ const Logo = ({variant = 'default'}: LogoProps) => {
   )
 }
 
-export default Logo
+export default memo(Logo);

@@ -1,6 +1,7 @@
 import { motion } from "motion/react"
 import { brands } from "@/assets"
 import * as variants from "@/lib/motionVariants"
+import { memo } from "react";
 
 const Brand = () => {
   return (
@@ -13,7 +14,7 @@ const Brand = () => {
             <motion.div variants={variants.staggerContainer} initial='start' whileInView='end' viewport={{ once: true }} className="flex justify-center flex-wrap gap-5 md:gap-10">
                 {brands.map((brand, index) => (
                     <motion.figure variants={variants.fadeInUp} key={index}>
-                        <img src={brand} alt="" className="opacity-[0.6]" />
+                        <img src={brand} alt="" className="opacity-[0.6]" loading="lazy" decoding="async" />
                     </motion.figure>
                 ))}
             </motion.div>
@@ -22,4 +23,4 @@ const Brand = () => {
   )
 }
 
-export default Brand
+export default memo(Brand);

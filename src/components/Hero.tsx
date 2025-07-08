@@ -87,7 +87,7 @@ const Hero = () => {
 
             <div className="relative mt-12 max-w-screen-xl mx-auto isolate rounded-xl md:mt-16">
                 <motion.figure className="bg-background/60 border border-slate-800 backdrop-blur-3xl rounded-xl shadow-2xl overflow-hidden" initial={{ y: 120, opacity: 0, filter: 'blur(5px)' }} animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }} transition={{ duration: 1.5, delay: 0.5, ease: 'backInOut' }} ref={heroBannerRef} style={{ scale }}>
-                    <img src={heroBanner} width={1468} height={815} alt="AnalytiX dashboard" />
+                    <img src={heroBanner} width={1468} height={815} alt="AnalytiX dashboard" loading="lazy" decoding="async" />
                 </motion.figure>
 
                 <motion.div className="absolute bg-primary inset-5 blur-[50px] -z-10" initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 2, delay: 0.5, ease: 'backInOut' }}></motion.div>

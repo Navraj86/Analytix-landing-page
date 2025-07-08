@@ -1,14 +1,16 @@
 import { ReactLenis } from 'lenis/react'
+import { Suspense, lazy } from 'react'
 import Header from "@/components/Header"
 import Hero from "@/components/Hero"
 import Brand from '@/components/Brand'
-import Feature from '@/components/Feature'
-import Process from '@/components/Process'
-import Overview from '@/components/Overview'
-import Review from '@/components/Review'
-import Blog from '@/components/Blog'
-import Cta from '@/components/Cta'
-import Footer from '@/components/Footer'
+
+const Feature = lazy(() => import('@/components/Feature'))
+const Process = lazy(() => import('@/components/Process'))
+const Overview = lazy(() => import('@/components/Overview'))
+const Review = lazy(() => import('@/components/Review'))
+const Blog = lazy(() => import('@/components/Blog'))
+const Cta = lazy(() => import('@/components/Cta'))
+const Footer = lazy(() => import('@/components/Footer'))
 
 const App = () => {
   return (
@@ -18,13 +20,15 @@ const App = () => {
         <main>
           <Hero />
           <Brand />
-          <Feature />
-          <Process />
-          <Overview />
-          <Review />
-          <Blog />
-          <Cta />
-          <Footer />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Feature />
+            <Process />
+            <Overview />
+            <Review />
+            <Blog />
+            <Cta />
+            <Footer />
+          </Suspense>
         </main>
       </div>
     </ReactLenis>

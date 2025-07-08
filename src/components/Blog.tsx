@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { blogData } from "@/constants"
 import * as variants from "@/lib/motionVariants"
+import { memo } from 'react';
 
 const Blog = () => {
   return (
@@ -29,7 +30,7 @@ const Blog = () => {
                         <Card className="group">
                             <CardHeader>
                                 <figure className="rounded-lg overflow-hidden">
-                                    <img src={imgSrc} alt={title} className="img-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={imgSrc} alt={title} className="img-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
                                 </figure>
                             </CardHeader>
 
@@ -43,7 +44,7 @@ const Blog = () => {
 
                             <CardFooter className="gap-3">
                                 <Avatar>
-                                    <AvatarImage src={avatarSrc} />
+                                    <AvatarImage src={avatarSrc} loading="lazy" decoding="async" />
                                     <AvatarFallback>{authorName}</AvatarFallback>
                                 </Avatar>
 
@@ -68,4 +69,4 @@ const Blog = () => {
   )
 }
 
-export default Blog
+export default memo(Blog);

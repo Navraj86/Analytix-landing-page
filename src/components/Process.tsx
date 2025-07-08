@@ -2,6 +2,7 @@ import { motion } from "motion/react"
 import { processData } from "@/constants"
 import * as variants from "@/lib/motionVariants"
 import { processBanner } from "@/assets"
+import { memo } from 'react';
 
 const Process = () => {
   return (
@@ -38,7 +39,7 @@ const Process = () => {
 
                 <div className="max-lg:-order-1">
                     <motion.figure variants={variants.fadeInUp} initial='start' whileInView='end' viewport={{ once: true }} className="mx-auto bg-primary rounded-3xl max-w-[580ox] overflow-hidden p-8 !pb-0 lg:p-12">
-                        <img src={processBanner} width={500} height={528} alt="" className="w-full h-full object-contain object-bottom" />
+                        <img src={processBanner} width={500} height={528} alt="" className="w-full h-full object-contain object-bottom" loading="lazy" decoding="async" />
                     </motion.figure>
                 </div>
             </div>
@@ -47,4 +48,4 @@ const Process = () => {
   )
 }
 
-export default Process
+export default memo(Process);

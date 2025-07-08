@@ -5,6 +5,7 @@ import Logo from "@/components/Logo";
 import MobileMenu from "@/components/MobileMenu";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { navMenu } from "@/constants";
+import { memo } from "react";
 
 const Header = () => {
   return (
@@ -71,4 +72,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default memo(Header)

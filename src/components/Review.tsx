@@ -3,6 +3,7 @@ import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/componen
 import { reviewData } from "@/constants"
 import * as variants from "@/lib/motionVariants"
 import { Quote } from "lucide-react"
+import { memo } from 'react';
 
 const Review = () => {
   return (
@@ -48,4 +49,4 @@ const Review = () => {
   )
 }
 
-export default Review
+export default memo(Review);

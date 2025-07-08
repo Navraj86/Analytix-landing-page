@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { featureData } from "@/constants"
 import * as variants from "@/lib/motionVariants"
+import { memo } from "react"
 
 const Feature = () => {
   return (
@@ -41,7 +42,7 @@ const Feature = () => {
 
                 {imgSrc && (
                   <motion.figure variants={variants.fadeInUp} className="p-6 pt-0">
-                    <img src={imgSrc} alt={title} />
+                    <img src={imgSrc} alt={title} loading="lazy" decoding="async" />
                   </motion.figure>
                 )}
               </>
@@ -53,4 +54,4 @@ const Feature = () => {
   )
 }
 
-export default Feature
+export default memo(Feature)
